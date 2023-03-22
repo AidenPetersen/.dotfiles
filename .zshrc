@@ -82,8 +82,10 @@ export EDITOR='nvim'
 
 export ARCHFLAGS="-arch x86_64"
 
+# scripts
 bindkey -s '^o' '. ranger\n'
-bindkey -s '^f' 'cd $(find ~/Documents -mindepth 1 -maxdepth 2 -type d | fzf)\n'
+bindkey -s '^f' '~/bin/open-proj-tmux.sh\n'
+
 # aliases
 alias zshconfig="mate ~/.zshrc"
 alias vi="nvim"
@@ -104,9 +106,4 @@ fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit
 compinit
 [ -f "/home/aidenp/.ghcup/env" ] && source "/home/aidenp/.ghcup/env" # ghcup-env
-
-# starship
-# eval "$(starship init zsh)"
-
-# fzf
 
