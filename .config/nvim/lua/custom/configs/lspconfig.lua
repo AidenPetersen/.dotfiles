@@ -14,7 +14,7 @@ for _, lsp in ipairs(servers) do
 end
 
 -- lspconfig.pyright.setup { blabla}
-lspconfig.denols.setup {
+lspconfig["denols"].setup {
   on_attach = on_attach,
   capabilities = capabilities,
   root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
@@ -23,9 +23,10 @@ lspconfig.denols.setup {
   },
 }
 
-lspconfig.tsserver.setup {
+lspconfig["tsserver"].setup {
   on_attach = on_attach,
   capabilities = capabilities,
   root_dir = lspconfig.util.root_pattern("package.json"),
+  single_file_support = false,
 }
 
